@@ -1,6 +1,6 @@
 # Summary
 
-* [快速上手](1.md)
+* [Quick Start](1.md)
   - [创建项目](1.1.md)
   - [放入 JFinal 库文件](1.2.md)
   - [修改 web.xml](1.3.md)
