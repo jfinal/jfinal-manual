@@ -1,0 +1,7 @@
+#JavaBean与Model合体
+
+JFinal 2.1版本提供了ModelGenerator、BaseModelGenerator、MappingKitGernator、DataDictionaryGenerator，分别生成Model、BaseModel、MappingKit、DataDictionary四类文件。可根据数据表自动化生成这四类文件。
+
+相对于JFinal 2.1之前的版本，生成后的Model继承自BaseModel而非继承自Model，BaseModel中拥有getter、setter方法遵守传统java bean规范，Model继承自BaseModel即完成了JavaBean与Model合体，拥有了传统JavaBean所有的优势，并且所有的getter、setter方法完全无需人工干预，数据表有任何变动一键重新生成即可。
+
+具体用法可在[jfinal官网](http://www.jfinal.com/download?file=GeneratorDemo.java)下载相关GeneratorDemo，用法极度简单
