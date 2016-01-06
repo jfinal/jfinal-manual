@@ -1,9 +1,8 @@
-#概述
+#Introduction
 
-基于 JFinal 的 web 项目需要创建一个继承自 JFinalConfig 类的子类,
-该类用
-于对整个 web 项目进行配置。
-JFinalConfig 子类需要实现五个抽象方法,如下所示:
+A JFinal-based web project needs to create a subclass of JFinalConfig class, which is used to configure the whole project.
+
+The subclass of JFinal needs to implement 5 abstract methods, shown as below:
 
 ```java
 	public class DemoConfig extends JFinalConfig {

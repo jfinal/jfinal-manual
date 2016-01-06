@@ -1,13 +1,17 @@
 #2.5 configInterceptor (Interceptors me)
 
-此方法用来配置JFinal的Interceptor，如下代码配置了名为AuthInterceptor的拦截器，在此处配置的拦截器将会对所有的请求进行拦截，除非使用@ClearInterceptor在Controller中清除。
+This method is used to configure JFinal `Interceptor`, following code has configure
+an `Interceptor` named AuthInterceptor, the `Interceptor` here would intercept all requests unless using @ClearInterceptor to clear `Inteceptor`s in `Controller`,
+
 
 ```java
 	public void configInterceptor(Interceptors me) {
 		me.add(new AuthInterceptor());
 	}
 ```
-    
-JFinal的Interceptor非常类似于Struts2，但使用起来更方便，Interceptor配置粒度分为Global、Controller、Action三个层次，其中以上代码配置粒度为全局。Controller与Action级的Interceptor配置将在后续章节中详细介绍。
+
+JFinal `Inteceptor` is quite similary to Struts2' Inteceptor, but easier to use.
+`Interceptor` has three level of granularity including Glable, Controller and Action to support any desied configuration,the granularity of above code is Global.
+The `Inteceptor` of Controllr and Action level would be introduced in detail in follow chapters.
 
 
