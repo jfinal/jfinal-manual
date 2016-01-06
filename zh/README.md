@@ -19,4 +19,4 @@ JFinal 官方QQ群: 322076903、432462639
 
 JFinal 官方微信
 
-  ![](wechat.jpg)
+  ![](images/wechat.jpg)
