@@ -1,35 +1,35 @@
-# 1.1 创建项目
+#Create Project
+JFinal recommands developers to use `Eclipse IDE for Java EE Developers` as develop environment. 
 
-JFinal 推荐使用Eclipse IDE for Java EE Developers做为开发环境。
+[Download URL](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/SR2/eclipse-jee-lun a-SR2-win32-x86_64.zip)
 
-[下载链接](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/SR2/eclipse-jee-lun a-SR2-win32-x86_64.zip)
-
-[IDEA 用户快速上手](IDEA 用户快速上手参见这里:http://my.oschina.net/chixn/blog/471755)
+[Quick start for IDEA users](http://my.oschina.net/chixn/blog/471755)
 
 
    
-##创建Dynamic Web Project
+##Dynamic Web Project
 
   ![](../images/1.1.png)
     
   
-##填入项目基本信息
+##Fill up basic information of project
 
   ![](../images/1.2.png)
     
-**注意：** Target runtime 一定要选择<None>
+**NOTE：** Target runtime should be <None>
    
-##修改Default Output Folder，推荐输入WebRoot\WEB-INF\classes
+##Modify Default Output Folder，WebRoot\WEB-INF\classes is recommended
 
   ![](../images/1.3.png)
 
-<font color="red">特别注意：此处的 Default out folder必须要与 WebRoot\WEB-INF\classes 目录完全一致才可以使用 JFinal 集成的 Jetty 来启动项目</font>。
+<font color="red">NOTE：The `Default out folder` here must be the same as `WebRoot\WEB-INF\classes` folder , in order to use Jetty embedded in JFinal to start project.</font>
     
-##修改Content directory，推荐输入WebRoot
+##Modify Content directory，WebRoot is recommended
 
   ![](../images/1.4.png)
     
-**注意：** 此处也可以使用默认值WebContent， 但上一步中的WebRoot\WEB-INF\classes则需要改成WebContent\WEB-INF\classes才能对应上。
+**NOTE：** Default value `WebContent` can be used here ,but `WebRoot\WEB-INF\classes` in previous step  should be modified to `WebContent\WEB-INF\classes`.
+
    
     
 

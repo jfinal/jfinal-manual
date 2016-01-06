@@ -1,4 +1,6 @@
-# 1.3 修改 web.xml
+#Modify web.xml
+
+Add following content to the web.xml
 
 ```xml
 	<filter>

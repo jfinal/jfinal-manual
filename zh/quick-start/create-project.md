@@ -1,10 +1,10 @@
-# 1.1 创建项目
+#创建项目
 
-JFinal 推荐使用Eclipse IDE for Java EE Developers做为开发环境。
+JFinal 推荐使用`Eclipse IDE for Java EE Developers`做为开发环境。
 
 [下载链接](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/SR2/eclipse-jee-lun a-SR2-win32-x86_64.zip)
 
-[IDEA 用户快速上手](IDEA 用户快速上手参见这里:http://my.oschina.net/chixn/blog/471755)
+[IDEA 用户快速上手](http://my.oschina.net/chixn/blog/471755)
 
 
    

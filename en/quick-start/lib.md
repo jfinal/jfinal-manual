@@ -1,6 +1,10 @@
-# 1.2 放入 JFinal 库文件
+#Import JFinal Library
 
-将 jfinal-xxx.jar与jetty-server-6.1.26.jar拷贝至项目WEB-INF\lib下即可。注意：jetty-server-6.1.26.jar是开发时使用的运行环境，生产环境不需要此文件
+Copy jfinal-xxx.jar and jetty-server-8.1.8.jar to WEB-INF\lib in the project.
+
+Notice that jetty-server-8.18.jar is used in develop environment, which is not
+necessary in production environment.
+
 
 
 

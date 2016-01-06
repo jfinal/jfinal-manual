@@ -1,15 +1,16 @@
-#启动项目
+#Start Project
 
-创建启动项如下图所示：
+Creating start configuration, as shown below:
 
   ![](../images/1.5.1.png)
 
-鼠标右键点击Java Application并选择New菜单项，新建Java Application启动项，如下图所示：
+Right click `Java Application` and choose `New` to create start configuration for Java Application, as shown below:
+
    
   ![](../images/1.5.2.jpg)
 
-在右侧窗口中的Main class输入框中填入: com.jfinal.core.JFinal并点击Debug按钮启动项目，如下图所示：
-  
+Input `com.jfinal.core.JFinal` in `Main class` of right-side window and click `Debug` buttun to start project, as shown below:
+
   ![](../images/1.5.3.jpg)
    
 

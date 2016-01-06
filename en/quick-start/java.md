@@ -1,6 +1,7 @@
-#1.4 添加 java 文件
+#Add Java Files
 
-在项目src目录下创建demo包，并在demo包下创建DemoConfig文件， 内容如下：
+Create `demo` package in `src` folder and create `DemoConfig` in `demo` package, the content is as follow:
+
 ```java
     package demo;
 	import com.jfinal.config.Constants;
@@ -21,8 +22,9 @@
 		public void configHandler(Handlers me) {}
 	}
 ```	
-注意：DemoConfig.java文件所在的包以及自身文件名必须与web.xml中的param-value标签内的配置相一致(在本例中该配置为demo.DemoConfig)。
-在demo包下创建HelloController类文件， 内容如下：
+**NOTE:** The package where the `DemoConfig.java` file is and its filename must keep the the same as config in param-value in the web.xml(in this case, the value of the config is `demo.DemoConfig`).
+
+Create `HelloController` class file in `demo` package, content is as follow:
 
 ```java
 	package demo;
