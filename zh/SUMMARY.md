@@ -48,7 +48,7 @@
   - [复合主键](activerecord/composite-pk.md)
   - [Oracle支持](activerecord/oracle.md)
   - [多数据源支持](activerecord/multi-ds.md)
-  - [非web环境下使用ActiveRecord](non-web.md)
+  - [非web环境下使用ActiveRecord](activerecord/non-web.md)
 * [EhCachePlugin](ehcacheplugin/README.md)
   - [EhCachePlugin](ehcacheplugin/plugin.md)
   - [CacheInterceptor](ehcacheplugin/cache.md)
