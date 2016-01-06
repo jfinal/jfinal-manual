@@ -12,8 +12,10 @@
 Routes 类主要有如下两个方法：
 
 ```java
-	public Routes add(String controllerKey, Class<? extends Controller> controllerClass, String viewPath)
-	public Routes add(String controllerKey, Class<? extends Controller> controllerClass)
+public Routes add(String controllerKey, Class<? extends Controller>
+                   controllerClass, String viewPath)
+public Routes add(String controllerKey, Class<? extends Controller>
+                   controllerClass)
 ```
     
 第一个参数controllerKey是指访问某个Controller所需要的一个字符串，该字符串唯一对应一个Controller，controllerKey仅能定位到Controller。

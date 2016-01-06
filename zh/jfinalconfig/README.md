@@ -1,0 +1,16 @@
+#概述
+
+基于 JFinal 的 web 项目需要创建一个继承自 JFinalConfig 类的子类,
+该类用
+于对整个 web 项目进行配置。
+JFinalConfig 子类需要实现五个抽象方法,如下所示:
+
+```java
+	public class DemoConfig extends JFinalConfig {
+		public void configConstant(Constants me) {}
+		public void configRoute(Routes me) {}
+		public void configPlugin(Plugins me) {}
+		public void configInterceptor(Interceptors me) {}
+		public void configHandler(Handlers me) {}
+	}
+```

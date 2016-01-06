@@ -21,7 +21,7 @@
 		public void configHandler(Handlers me) {}
 	}
 ```	
-	注意：DemoConfig.java文件所在的包以及自身文件名必须与web.xml中的param-value标签内的配置相一致(在本例中该配置为demo.DemoConfig)。
+注意：DemoConfig.java文件所在的包以及自身文件名必须与web.xml中的param-value标签内的配置相一致(在本例中该配置为demo.DemoConfig)。
 在demo包下创建HelloController类文件， 内容如下：
 
 ```java

@@ -1,4 +1,4 @@
-#2.1 概述
+#概述
 
 基于 JFinal 的 web 项目需要创建一个继承自 JFinalConfig 类的子类,
 该类用
