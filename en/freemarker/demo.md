@@ -1,6 +1,6 @@
-#Freemarker 示例
+#Freemarker Demo
 
-以下代码为 FreeMarker 经常使用的指令与插值:
+Following code is the commond and interpolation commonly used by FreeMarker.
 
 ```html
 <table>
@@ -14,4 +14,4 @@
 </table>
 ```
 
-以上代码将 userList 中的 user 对象循环输出。
+The code shown above would print user object in userList

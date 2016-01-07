@@ -1,3 +1,3 @@
-#在JFinal中扩展
+#Extension in JFinal
 
-可以通过 FreeMarkerRender.getConfiguration().setSharedVariable(“myKit”, new MyKit())为 FreeMarker 设置共享工具类,在 view 中使用 ${myKit.method(para)}。
+You can configure shared utility class for FreeMarker with `FreeMarkerRender.getConfiguration().setSharedVariable(“myKit”, new MyKit())` , then use `${myKit.method(para)}` in view.

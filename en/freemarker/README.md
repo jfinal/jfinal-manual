@@ -1,7 +1,9 @@
-#FreeMarker 基础
+#FreeMarker Basics
 
-JFinal 默认使用 FreeMarker 作为 View,为了使 eclipse jee 能正确识别 html,所以默认使 用”.html”作为 FreeMarker 视图文件的扩展名(原为”.ftl”)。
-如果需要使用 JSP 作为默认视图需要在 configConstant(Constants me)方法中进行配置,见 如下配置:
+
+JFinal use Freemaker as View by default,in order to let eclipse can correctly recognise html,use ".html" as extension name of Freemarker file( original name is ".ftl").
+If you need to use JSP as defalut view,you need to configure in configConstant(Constants me) method,see the following configuration:
+
 
 ```java
 public void configConstant(Constants me) {
