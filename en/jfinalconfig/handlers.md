@@ -1,6 +1,6 @@
-#2.6 configHandler (Handlers me)
+#configHandler (Handlers me)
 
-此方法用来配置JFinal的Handler，如下代码配置了名为ResourceHandler的处理器，Handler可以接管所有web请求，并对应用拥有完的控制权，可以很方便地实现更高层的功能性扩展。
+This method is used to configure JFinal `Handler`, following code has configure a handler named ResourceHandler. Handler could handle all the http requests and has the complete right of control of application, which could easily implement high-level extension.
 
 ```java
 	public void configHandler(Handlers me) {

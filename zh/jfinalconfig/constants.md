@@ -1,4 +1,4 @@
-#2.2 configConstant(Constants me)
+#configConstant(Constants me)
 
 此方法用来配置JFinal常量值，如开发模式常量devMode的配置，默认视图类型ViewType的配置，
 如下代码配置了JFinal运行在开发模式下且默认视图类型为JSP：

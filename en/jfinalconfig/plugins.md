@@ -1,5 +1,7 @@
-#2.4 configPlugin (Plugins me)
-此方法用来配置JFinal的Plugin，如下代码配置了C3p0数据库连接池插件与ActiveRecord数据库访问插件。通过以下的配置，可以在应用中使用ActiveRecord非常方便地操作数据库。
+#configPlugin (Plugins me)
+
+This method is used to configurate JFinal Plugin,following code has configurated plugin of C3p0 database connection pool and ActiveRecord
+Database access plugin.With following configuration,it is very convience to operate database.
 
 ```java
 	public void configPlugin(Plugins me) {
@@ -11,7 +13,9 @@
 		me.add(arp);
 		arp.addMapping("user", User.class);
 	}
-```        
-JFinal插件架构是其主要扩展方式之一，可以方便地创建插件并应用到项目中去。
+```
+
+JFinal plugin architecture is one of the main extension methods, you could effortlessly create plugins and apply in projects.
+
 
 

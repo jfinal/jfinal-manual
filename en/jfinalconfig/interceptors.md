@@ -1,4 +1,4 @@
-#2.5 configInterceptor (Interceptors me)
+#configInterceptor (Interceptors me)
 
 This method is used to configure JFinal `Interceptor`, following code has configure
 an `Interceptor` named AuthInterceptor, the `Interceptor` here would intercept all requests unless using @ClearInterceptor to clear `Inteceptor`s in `Controller`,

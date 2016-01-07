@@ -1,5 +1,5 @@
 #PropKit
-
+PropKit utility class is used to operate outter configuration files
 PropKit 工具类用来操作外部配置文件。PropKit 可以极度方便地在系统任意时空使用,如 下是示例代码:
 
 ```java
@@ -24,6 +24,4 @@ public class AppConfig extends JFinalConfig {
 }
 
 ```
-
-
-如上代码所示,PropKit 可同时加载多个配置文件,第一个被加载的配置文件可以使用 PorpKit.get(...)方法直接操作,非第一个被加载的配置文件则需要使用 PropKit.use(...).get(...) 来操作。PropKit 的使用并不限于在 YourJFinalConfig 中,可以在项目的任何地方使用, JFinalConfig 的 getProperty 方法其底层依赖于 PropKit 实现。
+As code shown above, PropKit support multipul config files, the first file loaded could be operated by `PropKit.get(...)`, the rest files loaded need to use `PropKit.use(...).get(...)` to operate. The useage of `PropKit` is not limited in `YourJFinalConfig`, it could be used anywhere in the project. The underlying implementation of `JFinalConfig`'`getProperty` method depends on `PropKit`.
