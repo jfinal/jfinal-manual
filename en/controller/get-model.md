@@ -1,9 +1,9 @@
-#getModel 系列方法
+#getModel series methods
 
-getModel 用来接收页面表单域传递过来的 model 对象,表单域名称以”modelName.attrName” 方式命名,除了支持 JFinal 的 Model 对象以外,getModel 同时也支持传统的 Java Bean。以下 是一个简单的示例:
+`getModel` is used to accept `model` object passwd from form fields follow the format 'modelName.attrName'.Except supporting JFinal' Model, `getModel` support traditional Java Bean as well. The following code is a simple example:
 
 ```java
-// 定义Model,在此为Blog
+// Define a Model named Blog
 public class Blog extends Model<Blog> {
     public static final Blog me = new Blog();
 }
@@ -29,4 +29,5 @@ public class BlogController extends Controller {
 }
 ```
 
-上面代码中,表单域采用了”blog.title”、”blog.content”作为表单域的 name 属性,”blog”是 类文件名称”Blog”的首字母变小写,”title”是 blog 数据库表的 title 字段,如果希望表单域使用 任意的 modelName,只需要在 getModel 时多添加一个参数来指定,例如: getModel(Blog.class, ”otherName”)。
+In above code, form fields have take 'blog.title', 'blog.content' as as name attribute in form fields, 'blog' is the class name of "Blog", 'title' is the title column of blog table.
+If you need any other `modelName`, only need to add one more parameter in `getModel`, e.g., `getModel(Blog.class,'otherName')`.

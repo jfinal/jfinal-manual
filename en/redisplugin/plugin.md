@@ -1,6 +1,5 @@
 #Redisplugin
-
-RedisPlugin 是作为 JFinal 的 Plugin 而存在的,所以使用时需要在 JFinalConfig 中配置 RedisPlugin,以下是 RedisPlugin 配置示例代码:
+RedisPlugin is a plugin integrated by JFinal,so that you should configure RedisPlugin in JFinalConfig when using,the usage of configure of RedisPlugin is shown as bellow:
 
 ```java
 public class DemoConfig extends JFinalConfig {
@@ -13,5 +12,4 @@ public class DemoConfig extends JFinalConfig {
     me.add(newsRedis);
 } }
 ```
-
-以上代码创建了两个 RedisPlugin 对象,分别为 bbsRedis 和 newsRedis。最先创建的 RedisPlugin 对象所持有的 Cache 对象将成为主缓存对象,主缓存对象可通过 Redis.use()直接获 取,否则需要提供 cacheName 参数才能获取,例如:Redis.use(“news”)
+In above code, two RedisPlugin objects , bbsRedis and newRedis, were created. The `Cache` object held by first created RedisPlugin object would be the main cache object, which could be get via `Redis.use()`, otherwise need to provide parameter to get, e.g., `Redis.use("news")`.

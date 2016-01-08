@@ -1,28 +1,30 @@
-#render 系列方法
-render 系列方法将渲染不同类型的视图并返回给客户端。JFinal 目前支持的视图类型有: FreeMarker、JSP、Velocity、JSON、File、Text、Html 等等。除了 JFinal 支持的视图型以外, 还可以通过继承 Render 抽象类来无限扩展视图类型。
+#render Series Methods
 
-通常情况下使用 Controller.render(String)方法来渲染视图,使用 Controller.render(String)时
-的 视图 类 型 由 JFinalConfig.configConstant(Constants constants) 配 置 中 的 constants. setViewType(ViewType)来决定,该设置方法支持的 ViewType 有:FreeMarker、JSP、Velocity, 不进行配置时的缺省配置为 FreeMarker。
+render series methods will render different types of views and return to client. Currently Jfinal can support follwing view types: FreeMarker,JSP,Velocity,JSON,File,Text,Html ,etc. Except view types supported by JFinal,it is  available to extend Render abstract class to exntend  new view types infinitely.
 
-此 外 , 还 可 以 通 过 constants.setMainRenderFactory(IMainRenderFactory) 来 设 置
-Controller.render(String)所使用的视图,IMainRenderFactory 专门用来对 Controller.render(String) 方法扩展除了 FreeMarker、JSP、Velocity 之外的视图。
+ Normally we use Controller.render(String) method to render a view, the view type when using this method is decided by constants.setViewType(ViewType) in JFinalConfig.configConstant(Constants constants) config,viewTypes which are supported by this method are: Freemarker,JSP,Velocity, default setting is FreeMarker if
+configuration is not setted.
 
-
-假 设 在 JFinalConfig.configRoute(Routes routes) 中 有 如 下 Controller 映 射 配 置 : routes.add(“/user”, UserController.class, “/path”), render(String view)使用例子:
+Besides,you can configue the view used by `Controller.render(String)` via `constants.setMainRenderFactory(IMainRenderFactory)`. `IMainRenderFactory` is used to extend `Controller.render(String)` method to support views except FreeMarker、JSP、Velocity.
 
 
-|方法调用   |描述   |
-|---|---|
-|render("test.html")   | 渲染名为 test.html 的视图,该视图的全路径 为”/path/test.html”  |
-|render("/other_path/test.html") | 渲染名为 test.html 的视图,该视图的全路径 为”/other_path/test.html”,即当参数以”/”开头时将 采用绝对路径。|
-
-其他render方法使用例子：
 
 
-|方法调用   |描述   |
+Suppose in JFinalConfig.configRoute(Routes routes),following Controller mapping configuration are included:
+route.add("/user",UserController.calss,"/path").
+render(String view) usage examples:
+
+|Method Invocation   |Description   |
+|----------|-------|
+|render("test.html")| Render a view named test.html and the full path of the view is '/path/test.html'|
+|render("/other_path/test.html") |Render a view named test.html ant the full path of the view is '/other_path/test.html',which means absolute path is used when parameter starts with '/'|
+
+Usage of other render methods are as follows:
+
+|Method Invocation   |Description |
 |---|---|
 |renderFreeMarker(”test.html”) |渲染名为 test.html 的视图,且视图类型为 FreeMarker。  |
-| renderJsp(”test.html”)|渲染名为 test.html 的视图,且视图类型为 Jsp。  |
+|renderJsp(”test.html”)|渲染名为 test.html 的视图,且视图类型为 Jsp。  |
 |renderVelocity(“test.html”)|渲染名为 test.html 的视图,且视图类型为 Velocity。|
 |renderJson()|将所有通过 Controller.setAttr(String, Object)设置 的变量转换成 json 数据并渲染。|
 |renderJson(“users”, userList)|以”users”为根,仅将 userList 中的数据转换成 json 数据并渲染。|
@@ -38,9 +40,7 @@ Controller.render(String)所使用的视图,IMainRenderFactory 专门用来对 C
 |render(new XmlRender())|使用自定义的 XmlRender 来渲染。|
 
 
-- IE 不支持 contentType 为 application/json,在 ajax 上传文件完成后返回 json 时 IE 提示下载文 件 , 解 决 办 法 是 使 用 : render(new JsonRender().forIE()) 或 者 render(new JsonRender(params).forIE())。这种情况只出现在 IE 浏览器 ajax 文件上传,其它普通 ajax 请求 不必理会。
+- Because IE do not support contentType is application/json,IE notice to download file when return json after file upload completed, the solution is using render(new JsonRender(params).forIE()).
 
-
-
-
-- 除 renderError 方法以外,在调用 render 系列的方法后程序并不会立即返回,如果需要立即 返回需要使用 return 语句。在一个 action 中多次调用 render 方法只有最后一次有效。
+- Except renderError method, program do not return directly after invoking render series methods, you can use return statement if you want to return directly.Only the last method calls of render method is
+valid in several method calls in a action

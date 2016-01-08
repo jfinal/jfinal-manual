@@ -1,6 +1,7 @@
-#非web环境使用redisplugin
+#Using RedisPluginin Non-Web Enviroment
 
-RedisPlugin 也可以在非 web 环境下使用,只需引入 jfinal.jar 然后多调用一下 redisPlugin.start()即可,以下是代码示例:
+RedisPlugin can be used in non-web enviroment as well, only need to import jfinal.jar and an extra invocation of `redisPlugin.start()`,usage is shown as bellow:
+
 
 ```java
     public class RedisTest {
