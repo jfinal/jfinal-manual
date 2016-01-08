@@ -1,2 +1,1 @@
-JFinal 为国际化提供了极速化的支持,国际化模块仅三个类文件,使用方式要比 spring 这
-类框架容易得多。
+JFinal support internationalization and  only contains 3 class files,which is quite easier than Spring framework.

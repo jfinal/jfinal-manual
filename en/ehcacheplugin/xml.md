@@ -1,2 +1,2 @@
-#ehcache.xml简介
-EhCache 的使用需要有 ehcache.xml 配置文件支持,该配置文件中配置了很多 cache 节点, 每个 cache 节点会配置一个 name 属性,例如:<cache name="blog" ...>,该属性是 CacheKit 取值所必须的。其它配置项如 eternal、overflowToDisk、timeToIdleSeconds、timeToLiveSeconds 详见 EhCache 官方文档。
+#ehcache.xml Introduction
+Using EhCache need ehcache.xml configuration file to support,this configuration file has configured several cache nodes,each cache node will configure a name attribute,e.g.,<cache name=”blog”...>,this attribute is the necessity for getting value by CacheKit.Details about other Configuration items ,such as eternal,overflowToDisk,timeToIdleSeconds,timeToLiveSeconds ,see EhCache official documentation.

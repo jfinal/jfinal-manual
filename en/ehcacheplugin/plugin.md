@@ -1,6 +1,6 @@
 #EhCachePlugin
 
-EhCachePlugin 是作为 JFinal 的 Plugin 而存在的,所以使用时需要在 JFinalConfig 中配置 EhCachePlugin,以下是 Plugin 配置示例代码:
+EhCachePluginexits as a JFinal plugin,so it is necessary to configure SpringPlugin in JFinalConfig when it is used,following code is an example of plugin configuration:
 
 ```java
 public class DemoConfig extends JFinalConfig {
