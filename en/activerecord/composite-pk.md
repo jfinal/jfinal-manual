@@ -1,22 +1,27 @@
-#复合主键
+#Composite Primary Key
 
-JFinal ActiveRecord从2.0版本开始，采用极简设计支持复合主键，对于Model来说需要在映射时指定复合主键名称，以下是具体例子：
+JFinal `ActiveRecordPlugin` support composite primary key using minimal design after 2.0 version. For `Model`, the name of composite primary key should be specified when mapping `Model`s, the detailed useage is shown as bellow:
 
 ```java
 ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
-// 多数据源的配置仅仅是如下第二个参数指定一次复合主键名称
+// The configuration of multiple datasources only need to specify composite primary key name in the second parameter.
+
 arp.addMapping("user_role", "userId, roleId", UserRole.class);
 
-//同时指定复合主键值即可查找记录
+// Specific composite primary key simultaneously to retrive data.
 UserRole.dao.findById(123, 456);
 
-//同时指定复合主键值即可删除记录
+// Specific composite primary key simultaneously to delete data.
 UserRole.dao.deleteById(123, 456);
 ```
 
-如上代码所示，对于Model来说，只需要在添加Model映射时指定复合主键名称即可开始使用复合主键，在后续的操作中JFinal会对复合主键支持的个数进行检测，当复合主键数量不正确时会报异常，尤其是复合主键数量不够时能够确保数据安全。复合主键不限定只能有两个，可以是数据库支持下的任意多个。
+As shown in above code, for `Model`, only need to specify composite primary key name when mapping the `Model`. In the  subsequent operations, JFinal would verify the number that composite primary key supports, exception would be through out when the number of composite primary keys are not correct, specially when the number of composite primary key can not guarantee data security.
 
-对于 Db + Record 模式来说，复合主键的使用不需要配置，直接用即可：
+The number of composite primary key are not limited to 2, it could be any number that the database support.
+
+
+For Db + Record model, need no configuration for composite primary key, use it directly.
+
 
 ```java
 Db.findById("user_role", "roleId, userId", 123, 456);

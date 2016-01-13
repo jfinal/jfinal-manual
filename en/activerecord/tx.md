@@ -1,27 +1,31 @@
-#声明式事务
+#Declarative Transactions
 
-ActiveRecord 支持声名式事务,声明式事务需要使用 ActiveRecordPlugin 提供的拦截器来
-实现,拦截器的配置方法见 Interceptor 有关章节。以下代码是声明式事务示例:
+ActiveRecord supports declarative transactions, which need to use `ActionRecordPlugin` to realize. View `Interceptor`-related chapters to see how to configure interceptors.
+The demo usage of declarative transaction is shown as bellow:
+
+
 
 ```java
-// 本例仅为示例, 并未严格考虑账户状态等业务逻辑 @Before(Tx.class)
+//This case is only for demonstration, some bussion logic like account status are not considered strictly.
+@Before(Tx.class)
 public void trans_demo() {
-// 获取转账金额
+// Get the transfer amount.
 Integer transAmount = getParaToInt("transAmount");
-// 获取转出账户id
+// Get the id of transfer-out
 Integer fromAccountId = getParaToInt("fromAccountId");
-// 获取转入账户id
+// Get the id of transfer-in
 Integer toAccountId = getParaToInt("toAccountId");
-// 转出操作
+// Transfer out
 Db.update("update account set cash = cash - ? where id = ?",
               transAmount, fromAccountId);
-// 转入操作
+// Transfer in
 Db.update("update account set cash = cash + ? where id = ?",
 }
 
 ```
+In above code, only a `Tx` interceptor is declared to add transaction support.
+Besides, `ActiveRecord` is equipped with ` TxByRegex`, `TxByActionKeys`, `TxByMethods` to support regex(regular expression), actionKeys, actionMethods declarative transactions respectively, demo code is shown as bellow:
 
-以上代码中,仅声明了一个 Tx 拦截器即为 action 添加了事务支持。除此之外 ActiveRecord 还配备了 TxByRegex、TxByActionKeys、TxByMethods,分别支持 regex(正则)、actionKeys、 actionMethods 声明式事务,以下是示例代码:
 
 ```java
 public void configInterceptor(Interceptors me) {
@@ -30,7 +34,11 @@ public void configInterceptor(Interceptors me) {
     me.add(new TxByMethods("save", "update"));
 }
 ```
+In above case,`TxByRegex` interceptor can intercept `action`s via regular expression passed in and transaction would be open when `actionKey` is matched by regular expression.
 
-上例中的 TxByRegex 拦截器可通过传入正则表达式对 action 进行拦截,当 actionKey 被正 则匹配上将开启事务。TxByActionKeys 可以对指定的 actionKey 进行拦截并开启事务, TxByMethods 可以对指定的 method 进行拦截并开启事务。
+`TxByActionKeys` can intercept `action`s for specific `actionKey` and open transactions.
+`TxByMethods` can intercept `action`s for specific methods and open transactions.
 
-<span style='color:red'>注意:MySql 数据库表必须设置为 InnoDB 引擎时才支持事务,MyISAM 并不支持事务。</span>
+
+
+<span style='color:red'>Note: MySql database only support transactions for InnoDB engine,not support MyISAM.</span>

@@ -1,28 +1,32 @@
-#Oracle支持
-
-Oracle数据库具有一定的特殊性，JFinal针对这些特殊性进行了一些额外的支持以方便广大的Oracle使用者。以下是一个完整的Oracle配置示例：
+#Support for Oracle
+Oracle database is specific, Considering these particularity,JFinal has some extra support to Oracle users. Following demo is a complete oracle configuration:
 
 ```java
 public class DemoConfig extends JFinalConfig {
   public void configPlugin(Plugins me) {
     C3p0Plugin cp = new C3p0Plugin(……);
-  //配置Oracle驱动
-  cp. setDriverClass("oracle.jdbc.driver.OracleDriver");
+    //Configure Oracle driver
+    cp.setDriverClass("oracle.jdbc.driver.OracleDriver");
     me.add(cp);
     ActiveRecordPlugin arp = new ActiveRecordPlugin(cp);
     me.add(arp);
-    // 配置Oracle方言
-  arp.setDialect(new OracleDialect());
-  // 配置属性名(字段名)大小写不敏感容器工厂
-  arp.setContainerFactory(new CaseInsensitiveContainerFactory());
-  arp.addMapping("user", "user_id", User.class);
+    //Configure Oracle dialect
+    arp.setDialect(new OracleDialect());
+    // Configure CaseInsensitiveContainerFactory for attributes and fields
+    arp.setContainerFactory(new CaseInsensitiveContainerFactory());
+    arp.addMapping("user", "user_id", User.class);
   }
 }
 ```
-由于Oracle数据库会自动将属性名(字段名)转换成大写，所以需要手动指定主键名为大写，如：arp.addMaping(“user”, “ID”, User.class)。如果想让ActiveRecord对属性名（字段名）的大小写不敏感可以通过设置CaseInsensitiveContainerFactory来达到，有了这个设置，则arp.addMaping(“user”, “ID”, User.class)不再需要了。
 
-另外，Oracle并未直接支持自增主键，JFinal为此提供了便捷的解决方案。要让Oracle支持自动主键主要分为两步：一是创建序列，二是在model中使用这个序列，具体办法如下：
-1：通过如下办法创建序列，本例中序列名为：MY_SEQ
+Since oracle database can convert columns to uppercase characters automatically,You need to specify the primary key name to uppercase manually.
+ For example: arp.addMapping(“user”,”ID”,User.class).
+If you want to make ActiveRecord non-sensitive to attribute, setting CaseInsensitiveContainerFactory is set to reach. With this setting, arp.addMapping(“user”,”ID”,User.class) is not need no longer.
+
+Besides, oracle have not support auto increment primary key directly ,JFinal has provided a convenient solution. In order to let oracle support auto increment primary key  consists of two major steps:  first create sequence,second use this sequence in model,The specific measures are as follows:
+
+
+1: Create sequence through the following methods, in this case ,the sequence name is : MY_SEQ
 
 ```mysql
 CREATE SEQUENCE MY_SEQ
@@ -35,17 +39,19 @@ CREATE SEQUENCE MY_SEQ
 
 
 
-
-2：在YourModel.set(…)中使用上面创建的序列
+2: Use sequence created above in YourModel.set(...)
 
 ```java
-// 创建User并使用序列
+// Create User and use sequence
 User user = new User().set("id", "MY_SEQ.nextval").set("age", 18);
 user.save();
-// 获取id值
+// Get id value.
 Integer id = user.get("id");
 ```
+, just need to code yourModel.set(primary key,sequence name).
 
 
 
-序列的使用很简单，只需要 yourModel.set(主键名, 序列名 <span style='color:red'>+ “.nextval”)</span>就可以了。<span style='color:red'>特别注意这里的 “.nextval” 后缀一定要是小写，OracleDialect对该值的大小写敏感。</span>
+It is easy to use sequence, just need yourModel.set(primary key, sequence name <span style='color:red'>+ “.nextval”)</span>.
+
+ <span style='color:red'> Pay special attention to '.nextval',the suffix should be lower-case, because `OracleDialect` is case-sensitive to that value.</span>

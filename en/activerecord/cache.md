@@ -1,6 +1,7 @@
-#Cach
+#Cache
 
-ActiveRecord 可以使用缓存以大大提高性能,以下代码是 Cache 使用示例:
+Efficiency of ActiveRecord can be improved rapidly with cache,following code is an usage example of Cache:
+
 
 ```java
 public void list() {
@@ -9,4 +10,6 @@ public void list() {
 }
 
 ```
-上例 findByCache 方法中的 cacheName 需要在 ehcache.xml 中配置如:<cache name="cacheName" ...> 。 此 外 Model.paginateByCache(...) 、 Db.findByCache(...) 、 Db.paginateByCache(...)方法都提供了 cache 支持。在使用时,只需传入 cacheName、key 以及 在 ehccache.xml 中配置相对应的 cacheName 就可以了。e
+In above case, `cacheName` in `findByCache` method needs config in `ehcache.xml` like `:<cache name="cacheName" ...>`.
+
+Besides, `Model.paginateByCache(...)`, ` Db.findByCache(...)`, `Db.paginateByCache(...)` provides cache support. Only need pass cacheName, key and config corresponding cacheNqame.

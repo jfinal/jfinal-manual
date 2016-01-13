@@ -1,29 +1,36 @@
-#JFInal独创Db+Record模式
+#Db+Record Model original created by JFinal
 
-Db 类及其配套的 Record 类,提供了在 Model 类之外更为丰富的数据库操作功能。使用 Db 与 Record 类时,无需对数据库表进行映射,Record 相当于一个通用的 Model。以下为 Db + Record 模式的一些常见用法:
+`Db` class and related `Record` class provide richer database operations beyond `Model` class. When using `Db` and `Record` classes,mapping to tables in database is no longer necessary. `Record` is equivalent to generic `Model`. The commonly-used usage of `Db + Record` model are shown as follows:
 
 ```java
-// 创建name属性为James,age属性为25的record对象并添加到数据库
+// Create an record, whose name attribute is James and age attribute is 25,and add into database.
 Record user = new Record().set("name", "James").set("age", 25);
 Db.save("user", user);
-// 删除id值为25的user表中的记录
+
+// Delete the `User` whose id is 25
 Db.deleteById("user", 25);
-// 查询id值为25的Record将其name属性改为James并更新到数据库
+
+// Retrive the User, whose id is 25, and modify name attribute to James and update into database.
 user = Db.findById("user", 25).set("name", "James");
 Db.update("user", user);
-// 查询id值为25的user, 且仅仅取name与age两个字段的值
-user = Db.findById("user", 25, "name, age"); // 获取user的name属性
+
+// Retrive the User whose id is 25 and only need name and age attributes.
+user = Db.findById("user", 25, "name, age");
+
+// Get the name attribute of user.
 String userName = user.getStr("name");
-// 获取user的age属性
+
+// Get the age attribute of user.
 Integer userAge = user.getInt("age");
-// 查询所有年龄大于18岁的user
+
+// Retrive all the users whose age are grater than 18.
 List<Record> users = Db.find("select * from user where age > 18");
-// 分页查询年龄大于18的user,当前页号为1,每页10个user
+
+// Paged query the users whose age are greater than 18,in the conditions where current page number id 1 and 10 users per page.
 Page<Record> userPage = Db.paginate(1, 10, "select *", "from user where http://ww
 age > ?", 18);
 ```
-
-以下为事务处理示例:
+The usage of transaction is shown as bellow:
 
 ```java
 boolean succeed = Db.tx(new IAtom(){
@@ -32,5 +39,4 @@ boolean succeed = Db.tx(new IAtom(){
         int count2 = Db.update("update account set cash = cash + ? where id = ?", 100, 456);
         return count == 1 && count2 == 1; }});
 ```
-
-以上两次数据库更新操作在一个事务中执行,如果执行过程中发生异常或者 invoke()方法 返回 false,则自动回滚事务。
+The two operations of upgrading database are executed in one transaction and if any exception takes place or false returned by `invoke()` method, this trasaction would rollback automatically.

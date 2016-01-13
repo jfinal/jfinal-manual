@@ -1,12 +1,11 @@
-#Dialect 多数据库支持
-
-目前 ActiveRecordPlugin 提供了 MysqlDialect、OracleDialect、AnsiSqlDialect 实现类。 MysqlDialect 与 OracleDialect 分别实现对 Mysql 与 Oracle 的支持,AnsiSqlDialect 实现对遵守 ANSI SQL 数据库的支持。以下是数据库 Dialect 的配置代码:
+#Dialect Multi-db support
+Currently ActiveRecordPlugin has provided MysqlDialect,OracleDialect,AnsiSqlDialect implement classes. MysqlDialet and OracleDialect respectively implement the support for Mysql and Oracle,AnsiSqlDialect implements the support of database who follows ANSI SQL.Following code is the configuration code of database dialect:
 
 ```java
 public class DemoConfig extends JFinalConfig {
     public void configPlugin(Plugins me) {
     ActiveRecordPlugin arp = new ActiveRecordPlugin(...); me.add(arp);
-    // 配置Postgresql方言
+    // Configure Postgresql dialect
     arp.setDialect(new PostgresqlDialect());
     }
 }

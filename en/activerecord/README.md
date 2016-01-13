@@ -1,3 +1,3 @@
 #ActiveRecord
 
-ActiveRecord是JFinal最核心的组成部分之一，通过ActiveRecord来操作数据库，将极大地减少代码量，极大地提升开发效率。
+ActiveRecord is one of the most import parts in JFinal. Operating database with ActiveRecord will greatly reduce the amount of code and greatly improve development efficiency.

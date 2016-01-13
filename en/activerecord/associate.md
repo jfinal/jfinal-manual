@@ -1,8 +1,11 @@
-#表关联操作
+#Associated table Operations
 
-JFinal ActiveRecord 天然支持表关联操作，并不需要学习新的东西，此为无招胜有招。表关联操作主要有两种方式：一是直接使用sql得到关联数据；二是在Model中添加获取关联数据的方法。
+JFinal ActiveRecord support associated table operations naturaly naturally, which means nothing new to learn.
+There are two methods for associated table operations and the first one is that getting associated table data using SQL directly. The second one is that adding method into `Model` which is used to get associate table data.
 
-假定现有两张数据库表：user、blog，并且user到blog是一对多关系，blog表中使用user_id关联到user表。如下代码演示使用第一种方式得到user_name：
+Assume there are two tables in database: user, blog  and the relationship between user and blog is one-to-many and blog table have  user_id column to associate to user table.
+
+The first method to get user_name is shown as bellow:
 
 ```java
 public void relation() {
@@ -11,10 +14,12 @@ public void relation() {
     String name = blog.getStr("user_name");
 }
 ```
-以下代码演示第二种方式在Blog中获取相关联的User以及在User中获取相关联的Blog：
+
+The second method to get associated User in Blog and get associated Blog in User is shown as bellow:
 
 ```java
 public class Blog extends Model<Blog>{
+
     public static final Blog dao = new Blog();
 
     public User getUser() {
@@ -22,6 +27,7 @@ public class Blog extends Model<Blog>{
     }
 }
 public class User extends Model<User>{
+
     public static final User dao = new User();
 
     public List<Blog> getBlogs() {

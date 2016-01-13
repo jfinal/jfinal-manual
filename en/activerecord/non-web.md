@@ -1,6 +1,10 @@
-#非web环境下使用ActiveRecord
+#Using ActiveRecord in Non-Web Environment
 
-ActiveRecordPlugin可以独立于java web 环境运行在任何普通的java程序中，使用方式极度简单，相对于web项目只需要手动调用一下其start() 方法即可立即使用。以下是代码示例：
+`ActiveRecordPlugin` can be used in any normal java applications independent on java web environment, which is quite handy.
+
+Comparing with web application, only need to invoke `start()` method manually.
+
+The demo code is shown as bellow:
 
 ```java
 public class ActiveRecordTest {
@@ -9,15 +13,15 @@ public class ActiveRecordTest {
     ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
     arp.addMapping("blog", Blog.class);
 
-    // 与web环境唯一的不同是要手动调用一次相关插件的start()方法
+    // The only difference is to invoke start() method manually.
     dp.start();
     arp.start();
 
-    // 通过上面简单的几行代码，即可立即开始使用
+    // It has already been ready to use through above simple code
     new Blog().set("title", "title").set("content", "cxt text").save();
     Blog.me.findById(123);
   }
 }
 ```
 
-**注意：**ActiveRecordPlugin所依赖的其它插件也必须手动调用一下start()方法，如上例中的dp.start()。
+**NOTE：**All the plugins depend on `ActiveRecordPlugin` need to invoke `start()` method manually as well, like `dp.start()` in above case.

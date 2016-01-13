@@ -1,8 +1,6 @@
 #ActiveRecordPlugin
 
-ActiveRecord是作为JFinal的Plugin而存在的，所以使用时需要在JFinalConfig中配置ActiveRecordPlugin。
-
-以下是Plugin配置示例代码
+ActiveRecordPluin exits as a JFinal plugin,so it is necessary to configure ActiveRecordPluin in JFinalConfig when it is used,following code is an example of plugin configuration:
 
 ```java
 public class DemoConfig extends JFinalConfig {
@@ -17,6 +15,5 @@ public class DemoConfig extends JFinalConfig {
 }
 ```
 
-以上代码配置了两个插件：C3p0Plugin与ActiveRecordPlugin，前者是c3p0数据源插件，后者是ActiveRecrod支持插件。ActiveReceord中定义了addMapping(String tableName, Class<? extends Model> modelClass>)方法，该方法建立了数据库表名到Model的映射关系。
-
-另外，以上代码中arp.addMapping(“user”, User.class)，表的主键名为默认为“id”，如果主键名称为 “user_id”则需要手动指定，如：arp.addMapping(“user”, “user_id”, User.class)。
+Above code has cofigured two plugins: C3p0Plugin and ActiveRecordPlugin,the former is c3p0 datasource plugin, the latter is ActiveRecord plugin support. In ActiveRecord, addMapping(String tableName,Class<? Extends Model> modelCalss>) method has been defined,this method has built a mapping from database table name to Model.
+In addition, primary key of table is “id” by default in arp.addMapping(“user”,User.class) of above code. Pramary key should be specified manually if its name is “user_id”.
