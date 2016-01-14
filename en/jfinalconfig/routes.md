@@ -29,12 +29,12 @@ The third parameter `viewPath` is the relative path of view returned by this `Co
 The rules of JFinal routes are as follows:
 
 
-| url                     |  targer
+| url                        |  targer
 |----------------------------|----------
 | controllerKey              | YourController.index()  
 | controllerKey/method       | YourController.method() 
-| controllerKey/method/v0_v1 | YourController.method()，所带url参数值为：v0_v1 
-| controllerKey/v0_v1        |YourController.index()，所带url参数值为：v0_v1 
+| controllerKey/method/v0_v1 | YourController.method(), the parameter in url is v0_v1 
+| controllerKey/v0_v1        |YourController.index(), the parameter in url is v0_v1 
 
   It can be seen from the table that it is necessary to use controllerKey and method to navigate accurately when a  exact action (The defination is in Chapter 3.2)is accessed by JFinal and the default value is index when method is omitted.In order to carrying over parameters in url,urlPara can carry more than one parameter in one request and JFinal use '-' by default to seperate values(can set separative sign by using constants.setUrlParaSeparator(String)).In Controller, these values can be retrieved by using getPara（int index).
 These three parts including controllerKey,method,urlPara must be seperated by using forward slash '/'.

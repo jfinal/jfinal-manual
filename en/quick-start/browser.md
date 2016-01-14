@@ -8,8 +8,9 @@ you need to delete `jetty-server-xxx.jar` library, when you use tomcat to develo
 
 The above method for starting project is not available for Tomcat, because it needs `jetty-server-xxx.jar`.
 
-注意:在 tomcat 下开发或运行项目时,需要先删除 jetty-server-xxx.jar 这个包,否则会引起冲 突。
-Tomcat 启动项目不能使用上面介绍的启动方式,因为上面的启动方式需要用到 jetty-server-xxx.jar。</font>
+*NOTE:* When developing or running projects with Tomcat
+jetty-server-xxx.jar needs to be deleted ,otherwise it would cause confict.
+The previous method is not available for Tomcat, because it needs to use  jetty-serve-xx.jar. </font>
 
 
 

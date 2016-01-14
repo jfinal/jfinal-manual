@@ -1,17 +1,17 @@
-JFinal 2.1 新增了 Generator 用来极速生成 Model、BaseModel、MappingKit、DataDictionary 文件。
-使用时通常只需配置 Generator 的四个参数即可:baseModelPackageName、 baseModelOutputDir、modelPackageName、modelOutputDir。四个参数分别表示 baseMode 的包名,
-baseModel 的输出路径,modle 的包名,model 的输出路径,以下是示例代码:
+#Rapid Experience with Generator
+In JFinal 2.1, Generator is added in to quickly generate `Model`, `BaseModel`, `MappingKit`, `DataDictionary` files.
+Only need to configure 4 parameters including `baseModelPackageName`, `baseModelOutputDir`, `modelPackageName`, `modelOutputDir` when using. These 4 parameters stand for package name used by `BaseMode`, path to save `BaseModel`, package name used by `Model`, path to save `Model` files respectively, the demo usage is shown as bellow:
 
 ```java
-// base model 所使用的包名
+// Package name used by BaseModel
 String baseModelPkg = "model.base";
-// base model 文件保存路径
+// Path to save BaseModel
 String baseModelDir = PathKit.getWebRootPath() + "/../src/model/base";
-// model 所使用的包名
+// Package name used by Model
 String modelPkg = "model";
-// model 文件保存路径
+// Path to save Model files
 String modelDir = baseModelDir + "/..";
 Generator gernerator = new Generator(dataSource, baseModelPkg, baseModelDir, modelPkg, modelDir);
 gernerator.generate();
 ```
-可在 JFinal 官网下载源码直接用于项目: [www.jfinal.com](http://www.jfinal.com "http://www.jfinal.com")
+You can download source code to use in your project on [www.jfinal.com](http://www.jfinal.com "http://www.jfinal.com").

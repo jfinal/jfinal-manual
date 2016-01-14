@@ -1,4 +1,4 @@
-JFinal is a WEB + ORM framework for agile development based on java language,its core design targets are rapid development, less code,simple to learn , powerful functionality, lightweight, easy of extensibility and Restful.
+JFinal is a WEB + ORM framework for agile development based on java language, its core design targets are rapid development, less code, simple to learn, powerful functionalities, lightweight, easy of extend  and Restful.
 
 JFinal has all the advantages of Java language while still has the development efficiency of a dynamic language like ruby,python,php,etc. ,saving more time for you to accompany lover, family and friends. :)
 

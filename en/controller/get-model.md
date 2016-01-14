@@ -10,21 +10,21 @@ public class Blog extends Model<Blog> {
 ```
 
 ```xml
-// 在页面表单中采用modelName.attrName形式为作为表单域的name
+// Use the pattern modelName.attrName in form as the name form fields.
 <form action="/blog/save" method="post">
   <input name="blog.title" type="text">
   <input name="blog.content" type="text">
-  <input value="提交" type="submit">
+  <input value="submit" type="submit">
 </form>
 ```
 
 ```java
 public class BlogController extends Controller {
     public void save() {
-    // 页面的modelName正好是Blog类名的首字母小写
-    Blog blog = getModel(Blog.class);
-// 如果表单域的名称为 "otherName.title"可加上一个参数来获取
-    blog = getModel(Blog.class, "otherName");
+        //The modelName in form field is just the the uncapitalized name of Blog class.
+        Blog blog = getModel(Blog.class);
+        //If the name in form field is "otherName.title" pattern, add an extra parameter to get.
+        blog = getModel(Blog.class, "otherName");
     }
 }
 ```

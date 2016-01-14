@@ -1,10 +1,10 @@
-#Validator配置
+#Validator Configuration
 
-Validator 配置方式与拦截器完全一样,见如下代码:
+How to configure `Validator` is the completely the same with `Interceptor`, shown as follow:
 
 ```java
 public class UserController extends Controller {
-    @Before(LoginValidator.class) // 配置方式与拦截器完全一样
+    @Before(LoginValidator.class) // The same with Interceptor
     public void login() {
     }
 }

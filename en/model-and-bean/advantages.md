@@ -1,10 +1,10 @@
-- 充分利用海量的针对于 Bean 设计的第三方工具,例如 jackson、freemarker
-- 快速响应数据库表变动,极速重构,提升开发效率,提升代码质量
-- 拥有 IDE 代码提示不用记忆数据表字段名,消除记忆负担,避免手写字段名出现手误
-- BaseModel 设计令 Model 中依然保持清爽,在表结构变化时极速重构关联代码
-- 自动化 table 至 Model 映射
-- 自动化主键、复合主键名称识别与映射
-- MappingKit 承载映射代码,JFinalConfig 保持干净清爽
-- 有利于分布式场景和无数据源时使用 Model
-- 新设计避免了以往自动扫描映射设计的若干缺点:引入新概念(如注解)增加学习成本、性
-能低、jar 包扫描可靠性与安全性低
+#The Main Advantages of Model-Bean combo
+
+- Make the moste use of 3rd-party tools designed for Bean, like jackson, freemarker
+- Quickly response for changes of databases, refactor rapidly, increse development efficiency, improve the code quality
+- Through code hinting, avoid memorizing column names in databases, eliminate the burden of memory, avoid mistakes of writing column names manually.
+- The design of `BaseModel` keeps `Model` still being clean and refactor related code rapidly when the structure of tables change.
+- Automate the mapping from table to `Model`
+- Automate the recognition and mapping of primary key or composite primary keys.
+- `MappingKit` holds mapping code to keep `JFinalConfig` clean.
+- Be benificial to distributed and non-datasource scenarios to use `Model`

@@ -23,21 +23,21 @@ Usage of other render methods are as follows:
 
 |Method Invocation   |Description |
 |---|---|
-|renderFreeMarker(”test.html”) |渲染名为 test.html 的视图,且视图类型为 FreeMarker。  |
-|renderJsp(”test.html”)|渲染名为 test.html 的视图,且视图类型为 Jsp。  |
-|renderVelocity(“test.html”)|渲染名为 test.html 的视图,且视图类型为 Velocity。|
-|renderJson()|将所有通过 Controller.setAttr(String, Object)设置 的变量转换成 json 数据并渲染。|
-|renderJson(“users”, userList)|以”users”为根,仅将 userList 中的数据转换成 json 数据并渲染。|
-|renderJson(user)|将 user 对象转换成 json 数据并渲染。|
-|renderJson(“{\”age\”:18}” )|直接渲染 json 字符串。|
-|renderJson(new String[]{“user”, “blog”})|仅将 setAttr(“user”, user)与 setAttr(“blog”, blog)设 置的属性转换成 json 并渲染。使用 setAttr 设置的 其它属性并不转换为 json。|
-|renderFile(“test.zip”);|渲染名为 test.zip 的文件,一般用于文件下载|
-|renderText(“Hello JFinal”)|渲染纯文本内容”Hello JFinal”。|
-|renderHtml(“Hello Html”)|渲染 Html 内容”Hello Html”。|
-|renderError (404 , “test.html”)|渲染名为 test.html 的文件,且状态为 404。|
-|renderError (500 , “test.html”)|渲染名为 test.html 的文件,且状态为 500。|
-|renderNull()|不渲染,即不向客户端返回数据。|
-|render(new XmlRender())|使用自定义的 XmlRender 来渲染。|
+|renderFreeMarker(”test.html”) |Render a view named test.html and the type is FreeMarker. |
+|renderJsp(”test.html”)|Render a view named test.html and the type is JSP. |
+|renderVelocity(“test.html”)|Render a view named test.html and the type is Velocity. |
+|renderJson()|Render a json with data passed by `Controller.setAttr(String, Object)`|
+|renderJson(“users”, userList)|Take 'users' as root,only convert data in userList to json then render them|
+|renderJson(user)|Render json data converted from a user object.|
+|renderJson(“{\”age\”:18}” )|Render a json string directly.|
+|renderJson(new String[]{“user”, “blog”})|Only convert data passed by `setAttr(“user”, user)` and `setAttr(“blog”, blog)` to json then render them|
+|renderFile(“test.zip”);|Render a file named test.zip ,normally used in file download.|
+|renderText(“Hello JFinal”)|Render a plain text and the content is 'Hello JFinal'.|
+|renderHtml(“Hello Html”)|Render a html and the content is 'Hello Html'|
+|renderError (404 , “test.html”)|Render a file namely test.html and the status is 404.|
+|renderError (500 , “test.html”)|Render a file namely test.html and the status is 500.|
+|renderNull()|Do not render,i.e., do not return data to client.|
+|render(new XmlRender())|Use user-defined XmlRender to render.|
 
 
 - Because IE do not support contentType is application/json,IE notice to download file when return json after file upload completed, the solution is using render(new JsonRender(params).forIE()).

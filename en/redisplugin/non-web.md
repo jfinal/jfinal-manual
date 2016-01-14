@@ -7,7 +7,7 @@ RedisPlugin can be used in non-web enviroment as well, only need to import jfina
     public class RedisTest {
         public static void main(String[] args) {
         RedisPlugin rp = new RedisPlugin("myRedis", "localhost");
-        // 与web下唯一区别是需要这里调用一次start()方法
+        // The only difference with web environment is that `start()` method should be invoked.
         rp.start();
         Redis.use().set("key", "value");
         Redis.use().get("key"); }
