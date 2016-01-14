@@ -1,5 +1,4 @@
 #Architecture
-JFinal 架构及扩展
 
 JFinal’s top-level architecture is shown as follow:
 
