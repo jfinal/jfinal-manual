@@ -56,7 +56,7 @@
   - [ehcache.xml Introduction](ehcacheplugin/xml.md)
 * [RedisPlugin](redisplugin/README.md)
   - [Redisplugin](redisplugin/plugin.md)
-  - [Redis与Cache](redisplugin/cache.md)
+  - [Redis and Cache](redisplugin/cache.md)
   - [Using RedisPluginin Non-Web Enviroment](redisplugin/non-web.md)
 * [Validator](validator/README.md)
   - [Validator](validator/validator.md)
