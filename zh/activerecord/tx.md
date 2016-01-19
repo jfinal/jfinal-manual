@@ -4,7 +4,8 @@ ActiveRecord 支持声名式事务,声明式事务需要使用 ActiveRecordPlugi
 实现,拦截器的配置方法见 Interceptor 有关章节。以下代码是声明式事务示例:
 
 ```java
-// 本例仅为示例, 并未严格考虑账户状态等业务逻辑 @Before(Tx.class)
+// 本例仅为示例, 并未严格考虑账户状态等业务逻辑 
+@Before(Tx.class)
 public void trans_demo() {
 // 获取转账金额
 Integer transAmount = getParaToInt("transAmount");
